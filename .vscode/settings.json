@@ -1,0 +1,10 @@
+{
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--line-length=112"
+    ],
+    "python.linting.mypyEnabled": true,
+    "python.linting.lintOnSave": true,
+    "editor.formatOnSave": true,
+    "python.linting.pydocstyleEnabled": true
+}
