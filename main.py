@@ -1,13 +1,13 @@
 """키보드의 WASD를 이용한 맵 스크롤"""
 import sys
 import pygame
-from src.util import Tileset, Tilemap
+
+from src.tilemap import Tilemap
 
 if __name__ == "__main__":
     pygame.init()
     display = pygame.display.set_mode((640, 480), pygame.DOUBLEBUF)
-    tileset = Tileset("asset/tileset_base.png")
-    tilemap = Tilemap(tileset)
+    tilemap = Tilemap("asset/floor_tiles.png", (64, 32), (6, 12))
     clock = pygame.time.Clock()
 
     while True:
@@ -16,15 +16,11 @@ if __name__ == "__main__":
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-            if event.type == pygame.KEYDOWN:
-                pressed = pygame.key.get_pressed()
-                if pressed[pygame.K_w]:
-                    tilemap.move(0, -15)
-                elif pressed[pygame.K_s]:
-                    tilemap.move(0, 15)
-                elif pressed[pygame.K_a]:
-                    tilemap.move(-15, 0)
-                elif pressed[pygame.K_d]:
-                    tilemap.move(15, 0)
+        tilemap.key_event(pygame.key.get_pressed())
+        cx, cy = display.get_rect().center
+        ex = display.get_rect().right
+        ey = display.get_rect().bottom
+        pygame.draw.line(display, (255, 0, 0, 150), (0, cy), (ex, cy))
+        pygame.draw.line(display, (255, 0, 0, 150), (cx, 0), (cx, ey))
         pygame.display.flip()
-        clock.tick(15)
+        clock.tick(30)
