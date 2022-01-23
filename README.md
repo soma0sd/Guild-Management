@@ -8,7 +8,15 @@
 
 - Python 3.9.10 (venv)
 
-## v0.0.1
+## 업데이트
 
+### v0.1.0
+
+- [커밋 기록](https://github.com/soma0sd/Guild-Management/commits/0.1.0)
+- 키보드 스크롤시 가속 적용
+
+### v0.0.1
+
+- [커밋 기록](https://github.com/soma0sd/Guild-Management/commits/0.0.1)
 - 타일을 배치하는 기본적인 클래스 구현
 - 키보드 조작을 통한 화면 이동
