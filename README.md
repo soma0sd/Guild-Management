@@ -14,6 +14,7 @@
 
 - [커밋 기록](https://github.com/soma0sd/Guild-Management/commits/0.1.0)
 - 키보드 스크롤시 가속 적용
+- 여러 레이어를 사용하는 맵 구현
 
 ### v0.0.1
 
